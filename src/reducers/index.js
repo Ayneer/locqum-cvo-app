@@ -1,4 +1,4 @@
-import { Menu } from "./menu/inedx";
+import { Menu } from "./menu";
 
 export default {
     Menu

@@ -2,7 +2,7 @@
 import { LIMPIAR_STATE_SALIR } from "actions";
 
 //Constantes locales
-const TOGGLE_MENU = "TOGGLE_MENU";
+export const TOGGLE_MENU = "TOGGLE_MENU";
 
 //Estos en su forma inicial
 const initState = {

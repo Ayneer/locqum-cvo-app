@@ -9,6 +9,7 @@ body{
 @import "layout/metismenu.scss";
 @import "layout/index.scss";
 @import "animations/index.scss";
+@import "pages/login.scss";
 
 .displayNone{
     display: none !important;
@@ -22,4 +23,17 @@ body{
 .text2{
     color: $textColor;
     font-size: 15px !important;
+}
+
+.body-page{
+    padding: 0;
+}
+
+.header-page{
+    margin-bottom: 2rem;
+}
+
+.field-formik{
+    width: 100% !important;
+    margin-bottom: 1rem !important;
 }

@@ -4,6 +4,8 @@ import React from "react";
 import { useTheme, useMediaQuery } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "actions/menu";
+import { CLOSE } from "../routes";
+import { logOut } from "actions/account";
 
 const DefaultLink = ({
     className,
@@ -25,6 +27,7 @@ const DefaultLink = ({
     //Para disparar las acciones de redux
     const dispatch = useDispatch();
     const _toggleMenu = () => dispatch(toggleMenu(false));
+    const _logOut = () => dispatch(logOut());
 
     //Para el manejo de mediaQuery
     const theme = useTheme();
@@ -35,11 +38,13 @@ const DefaultLink = ({
     }
 
     const _onClickMenu = (e) => {
-        if(isSm_Xs){
+        if (link === CLOSE) {
+            _logOut();
+        } else if (isSm_Xs) {
             _toggleMenu();
         }
     }
-    
+
     return (
         <Link
             className={classnames(

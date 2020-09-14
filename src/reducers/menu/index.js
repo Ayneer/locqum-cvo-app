@@ -1,5 +1,5 @@
 //Constantes generales
-import { LIMPIAR_STATE_SALIR } from "actions";
+import { CLEAR_ALL_REDUCERS } from "actions";
 
 //Constantes locales
 export const TOGGLE_MENU = "TOGGLE_MENU";
@@ -13,7 +13,7 @@ const initState = {
 export const menu = (state = initState, action) => {
     switch (action.type) {
 
-        case LIMPIAR_STATE_SALIR: {
+        case CLEAR_ALL_REDUCERS: {
             return {
                 ...state,
                 ...initState
@@ -33,5 +33,4 @@ export const menu = (state = initState, action) => {
 }
 
 export const _toggleMenu = state => ({ type: TOGGLE_MENU, state });
-
 export const getMenuState = state => state && state.open !== undefined ? state.open : false;

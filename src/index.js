@@ -4,8 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import app from 'app';
 import configRedux from 'config/redux';
+
+//Css general
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/index.scss';
+
 
 //Configuración del store de redux
 const store = configRedux();

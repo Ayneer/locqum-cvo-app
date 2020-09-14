@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Avatar, Typography, IconButton, Menu, Card, CardHeader, useMediaQuery, useTheme } from '@material-ui/core';
 import { ExitToAppRounded, MoreVertOutlined } from '@material-ui/icons';
 import { useDispatch } from 'react-redux';
-import { logout } from 'actions/session';
 import clsx from 'clsx';
+import { logOut } from 'actions/account';
 
 const RightNav = () => {
 
@@ -12,7 +12,7 @@ const RightNav = () => {
 
     const dispatch = useDispatch();
     //Dispatch para cerrar sesión
-    const _logout = (cb) => dispatch(logout(cb));
+    const _logout = () => dispatch(logOut());
 
     //Toggle menú tres puntos
     const _toggleMoreMenu = event => setMoreMenu(event.currentTarget);
@@ -30,7 +30,7 @@ const RightNav = () => {
                 <Typography className={"text1"} noWrap>
                     {"userName"}
                 </Typography>
-                <IconButton color="inherit" edge="end" onClick={() => _logout(() => { })}>
+                <IconButton color="inherit" edge="end" onClick={() => _logout()}>
                     <ExitToAppRounded />
                 </IconButton>
             </div>
@@ -44,7 +44,7 @@ const RightNav = () => {
                         <CardHeader
                             avatar={<Avatar />}
                             action={
-                                <IconButton color="inherit" edge="end" onClick={() => _logout(() => { })}>
+                                <IconButton color="inherit" edge="end" onClick={() => _logout()}>
                                     <ExitToAppRounded />
                                 </IconButton>
                             }

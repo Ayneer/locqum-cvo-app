@@ -5,12 +5,13 @@ import RightNav from './rightNav';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenu } from 'actions/menu';
 import clsx from 'clsx';
+import { getMenuState } from 'reducers/menu';
 
 //Componente encargado de ilustrar el menú horizontal del aplicativo
 const AppNavbar = ({ title }) => {
 
     //State redux
-    const menuState = useSelector(({ Menu }) => Menu.open);
+    const menuState = useSelector(({ menu }) => getMenuState(menu));
 
     //Para disparar las acciones de redux
     const dispatch = useDispatch();

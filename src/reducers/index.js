@@ -1,5 +1,5 @@
-import { Menu } from "./menu";
+import { menu } from "./menu";
 
 export default {
-    Menu
+    menu
 }

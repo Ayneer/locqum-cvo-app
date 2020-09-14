@@ -2,7 +2,7 @@ import configureStore from "redux-mock-store";
 import thunk from 'redux-thunk'
 
 import * as actions from "./";
-import * as reducers from "reducers/menu/inedx";
+import * as reducers from "reducers/menu";
 
 const middleware = [thunk];
 
@@ -15,7 +15,7 @@ describe('async actions', () => {
     const expectedActions = [
         { type: reducers.TOGGLE_MENU, state: false }
       ]
-      const store = mockStore({ Menu: {} })
+      const store = mockStore({ menu: {} })
   
       return store.dispatch(actions.toggleMenu(false)).then(() => {
         expect(expectedActions).toEqual(store.getActions())
@@ -25,13 +25,13 @@ describe('async actions', () => {
 
 describe('reducers', () => {
   test('should handle Menu reducer', () => {
-    expect(reducers.Menu(undefined, {})).toEqual({
+    expect(reducers.menu(undefined, {})).toEqual({
       open: true
     })
   })
 
   test('should handle Menu reducer adding TOGGLE_MENU', () => {
-    expect(reducers.Menu(undefined, { type: reducers.TOGGLE_MENU, state: false })).toEqual({
+    expect(reducers.menu(undefined, { type: reducers.TOGGLE_MENU, state: false })).toEqual({
       open: false 
     })
   })

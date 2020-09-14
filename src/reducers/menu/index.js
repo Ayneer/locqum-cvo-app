@@ -10,7 +10,7 @@ const initState = {
 }
 
 //Manejo de los estados del menú con redux
-export const Menu = (state = initState, action) => {
+export const menu = (state = initState, action) => {
     switch (action.type) {
 
         case LIMPIAR_STATE_SALIR: {
@@ -33,3 +33,5 @@ export const Menu = (state = initState, action) => {
 }
 
 export const _toggleMenu = state => ({ type: TOGGLE_MENU, state });
+
+export const getMenuState = state => state && state.open !== undefined ? state.open : false;

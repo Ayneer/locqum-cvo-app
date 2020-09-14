@@ -18,6 +18,7 @@ import Example from 'pages/example';
 import { HOME, ABOUT, EXAMPLE } from './verticalMenu/menuOptions/routes';
 import { useTheme, useMediaQuery } from '@material-ui/core';
 import { toggleMenu } from 'actions/menu';
+import { getMenuState } from 'reducers/menu';
 
 //Componente que ilustra la estructura general de aplicativo
 const Layout = () => {
@@ -30,7 +31,7 @@ const Layout = () => {
      const _toggleMenu = state => dispatch(toggleMenu(state));
 
     //State redux
-    const menuState = useSelector(({ Menu }) => Menu.open);
+    const menuState = useSelector(({ menu }) => getMenuState(menu));
 
     //Para el manejo de mediaQuery
     const theme = useTheme();

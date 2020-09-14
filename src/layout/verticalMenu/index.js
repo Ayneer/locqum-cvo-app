@@ -5,12 +5,13 @@ import clsx from 'clsx';
 import Brand from './brand';
 import MenuOptions from './menuOptions';
 import { toggleMenu } from 'actions/menu';
+import { getMenuState } from 'reducers/menu';
 
 //Componente encargado de ilustrar el menú vertical del aplicativo
 const VerticalMenu = ({ history }) => {
 
     //State redux
-    const menuState = useSelector(({ Menu }) => Menu.open);
+    const menuState = useSelector(({ menu }) => getMenuState(menu));
 
     //Para disparar las acciones de redux
     const dispatch = useDispatch();
